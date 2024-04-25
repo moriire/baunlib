@@ -1,4 +1,3 @@
-```markdown
 # BaunLib
 
 BaunLib is a library component of Baun Eduvault, designed to provide access to a diverse range of educational materials focusing on STEAM (Science, Technology, Engineering, Arts, and Mathematics) and Robotics.
@@ -84,4 +83,3 @@ Contributions to BaunLib are welcome! Please refer to the [Contribution Guidelin
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-```
