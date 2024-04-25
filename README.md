@@ -76,10 +76,6 @@ Before installing BaunLib, make sure you have the following prerequisites instal
 
 - Once BaunLib is installed and running, users can navigate through the frontend to browse, search, and access educational materials in various STEAM and Robotics subjects.
 
-## Contributing
-
-Contributions to BaunLib are welcome! Please refer to the [Contribution Guidelines](CONTRIBUTING.md) for more information on how to contribute.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
