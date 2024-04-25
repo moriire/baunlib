@@ -22,7 +22,7 @@ Before installing BaunLib, make sure you have the following prerequisites instal
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/baunlib.git
+    git clone https://github.com/roboticsbaun/baunlib.git
     ```
 
 2. **Set Up the Backend:**
@@ -45,8 +45,8 @@ Before installing BaunLib, make sure you have the following prerequisites instal
 
             ```sql
             CREATE DATABASE baunlib_db;
-            CREATE USER 'baunlib_user'@'localhost' IDENTIFIED BY 'your_password';
-            GRANT ALL PRIVILEGES ON baunlib_db.* TO 'baunlib_user'@'localhost';
+            CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+            GRANT ALL PRIVILEGES ON baunlib_db.* TO 'user'@'localhost';
             FLUSH PRIVILEGES;
             ```
 
