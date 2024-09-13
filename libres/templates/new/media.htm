@@ -1,0 +1,132 @@
+{% extends 'new/base_generic.html' %} 
+{% block title %}Categories{% endblock title %} 
+{% block header %} {{ title.upper }} {% endblock header %}
+{% block previous %} {% url 'sub_categories' 2  %} {% endblock previous %}
+{% block content %}
+{{ media_type }}
+<div class="row justify-content-center my-3">
+        <div class="col-xs-10">
+
+         
+              <div class="col-12 text-light my-3">
+                <h2 class="text-light text-capitalize">Videos {{ pk }}({{ count }})</h2>
+                <p>Descriptions</p>
+              </div>
+	      
+              <div class="row">
+
+		 {% for video in medias %}
+		
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div
+                    class="card border-0 border-bottom border-primary shadow-sm m-2"
+                  >
+		
+<video controls  class="card-body text-center p-3 p-xxl-5" >
+				<source src="{{ video.uploaded_file.url }}">
+			</video>
+                   
+                    <div class="card-footer bg-warning py-2 text-center">
+                      <a
+                        href="#"
+                        class="text-decoration-none btn btn-link-warning"
+                      >
+                        <h4 class="text-center">{{ video.title }} {{ video.media_type }}</h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+               {% endfor %}
+                
+              </div>
+            </div>
+
+ <div
+              class="tab-pane fade"
+              id="nav-pdfs"
+              role="tabpanel"
+              aria-labelledby="nav-pdfs-tab"
+              tabindex="0"
+            >
+              <div class="col-12 text-light my-3">
+                <h2 class="text-light text-capitalize">PDFs({{ p_count }})</h2>
+                <p>Descriptions</p>
+              </div>
+
+              <div class="row">
+
+                 {% for pdf in pdfs %}
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div
+                    class="card border-0 border-bottom border-primary shadow-sm m-2"
+                  >
+
+<video controls  class="card-body text-center p-3 p-xxl-5" >
+                                <source src="{{ pdf.uploaded_file.url }}">
+                        </video>
+
+                    <div class="card-footer bg-warning py-2 text-center">
+                      <a
+                        href="#"
+                        class="text-decoration-none btn btn-link-warning"
+                      >
+                        <h4 class="text-center">{{ pdf.title }}</h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+               {% endfor %}
+
+              </div>
+            </div>
+
+
+   <div
+              class="tab-pane fade"
+              id="nav-documents"
+              role="tabpanel"
+              aria-labelledby="nav-documents-tab"
+              tabindex="0"
+            >
+              <div class="col-12 text-light my-3">
+                <h2 class="text-light text-capitalize">WORD DOCUMENTS({{ d_count }})</h2>
+                <p>Descriptions</p>
+              </div>
+
+              <div class="row">
+
+                 {% for doc in docs %}
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div
+                    class="card border-0 border-bottom border-primary shadow-sm m-2"
+                  >
+
+<video controls  class="card-body text-center p-3 p-xxl-5" >
+                                <source src="{{ doc.uploaded_file.url }}">
+                        </video>
+                   
+                    <div class="card-footer bg-warning py-2 text-center">
+                      <a
+                        href="#"
+                        class="text-decoration-none btn btn-link-warning"
+                      >
+                        <h4 class="text-center">{{ doc.title }}</h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+               {% endfor %}
+
+              </div>
+            </div>
+
+	 
+           
+         
+	   
+          </div>
+    
+        </div>
+{% endblock content %}

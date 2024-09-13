@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+
+        <!-- Start Blog Area-->
+        <div class="blog-area .fix bg-color area-padding-2">
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="section-headline text-center">
+                                        <h3>{{ title }}</h3>
+                                        <div class="Categories-nav">
+                                                <a href="/">..Go back to Categories</a>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="blog-grid home-blog">
+                        
+                        <!-- Start single blog -->
+                        {% for format in formats %}
+                        <div class="col-md-4 col-sm-6 col-xs-12 py-5 my-5">
+                            <div class="single-blog">
+                               <div class="blog-image">
+                                       <ul class="list-group p-3">
+                                        <a class="image-scale" href="/{{ link }}/{{ format }}">
+                                                <img src="/static/dfiles/{{ format }}.png" alt="" class="m-3">
+                                        </a>
+                                        
+                                        <li class="list-group-item">
+                                                <div class="blog-content">
+                                                        
+                                                        <h4>{{ format | upper }} Content</h4>
+                                                </div>
+                                        </li>
+                                       </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- End single blog -->
+                        {% endfor %}
+        
+                        </div>
+                    </div>
+                </div>
+                <!-- End row -->
+        </div>
+        <!-- End Blog Area-->
+
+{% endblock %}

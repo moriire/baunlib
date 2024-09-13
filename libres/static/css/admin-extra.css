@@ -1,0 +1,31 @@
+:root{
+	    --object-tools-bg: #fff;
+	    --link-fg: #8F5F52;
+}
+html[data-theme="light"],
+:root {
+	--primary: #C49E35;
+    --secondary: #8F5F52;
+	--object-tools-bg: #8F5F52;
+	--body-fg: #C49E35;
+	--body-bg: #fff;
+	--link-fg: #C49E35;
+	--breadcrumbs-fg: #fff;
+}
+
+html[data-theme="dark"],
+:root {
+    --primary: #fff;
+    --secondary: #8F5F52;
+    --accent: #f5dd5d;
+    --primary-fg: #fff;
+    --body-bg: #C49E35;
+    --body-fg: #fff;
+    --breadcrumbs-bg: #fff;
+    --breadcrumbs-fg: #8F5F52;
+    --object-tools-bg: #8F5F52;
+    --selected-bg: #e4e4e4;
+    --selected-row: #fff;
+    --header-link-color:#fff
+}
+

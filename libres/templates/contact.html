@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %} 
+{% load static %}
+        {% block content %}
+        <!-- categories Area -->
+        <div class="games-play-area bg-color-2 area-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+						</div>
+					</div>
+                </div>
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+							<h3>Contact Us</h3>
+						</div>
+					</div>
+                </div>
+                 <!-- Categories container -->
+                <!-- Row 1 -->
+                <div class="row d-flex" style="justify-content: center; margin: 0; padding: 0;">
+			{% for category in categories %}
+			
+			<!-- End single page -->
+					<div class="col-md-4 .tab-menu" style="background-color: #4A2F28; padding: 10px; border: 3px solid white ">
+						
+							 
+						<a href="{{ category.name_slug }}">
+							<img class="cha-img" src="{{ category.icon.url }}" alt="games image">
+								<span class="title-date">
+									<span class="cha-title text-capitalize">{{ category.name }}</span>
+									<span class="cha-bit text-capitalize">{{ category.subcategory_count }} Sub-categories</span>
+								</span>
+								    </a>
+								
+					
+					</div>
+			{% endfor %}
+			
+					
+					
+					<!-- end column -->
+                </div>
+		
+					
+             
+                <!-- Row 7 -->
+                
+            </div>
+        </div>
+        <!-- End games end -->
+{% endblock content %}

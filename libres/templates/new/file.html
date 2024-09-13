@@ -1,0 +1,26 @@
+{% extends 'new/base_generic.html' %}
+{% load static %}
+{% block title %} | {{ file.title }} {% endblock title %}
+{% block header %} {{ file.sub_category.title }} - {{ file.title }} {% endblock header %}
+{% block previous %}  {% endblock previous %}
+{% block content %}
+<div class="row justify-content-center py-3 .vh-100">
+{% if file.media_type == "VIDEO" %}
+<div class="card col-lg-10" style="height: 80vh;">
+<video type="video/mp4" controls autoplay height="100%">
+<source src="{{ file.uploaded_file.url }}">
+Media Not Supported
+</video>
+</div>
+{% elif  file.media_type == 'PDF' %}
+<div class="card col-lg-12" style="height: 100vh;" >
+<object data="{{ file.uploaded_file.url }}" class="card-body" style="height:100%"></object>
+</div>
+{% else %}
+<div class="card col-lg-12" style="height: 100vh;" >
+<object data="{{ file.uploaded_file.url }}" class="card-body" style="height:100%"></object>
+</div>
+{% endif %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+
+        <!-- Start Blog Area-->
+        <div class="blog-area .fix bg-color area-padding-2">
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="section-headline text-center">
+                                        <h3>
+                                                {% if media_type == 'PDF' %}
+                                                         {{ title }} PDF media
+                                                        {% elif media_type == 'VIDEO' %}
+                                                         {{ title }} Video media
+                                                        {% elif media_type == 'WORD' %}
+                                                         {{ title }} word document
+                                                {% endif %}
+                                                
+                                                
+                                        </h3>
+                                        <div class="Categories-nav">
+                                                <a href="/library/">..Go back to Categories</a>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                {% if files %}
+                <div class="row justify-content-center d-flex">
+                      
+                    <div class=".blog-grid .home-blog">
+                            {% if file.media_type == 'PDF' %}
+                                        <img src="{% static 'dfiles/pdf.png' %}" alt="">
+                                        {% elif file.media_type == 'VIDEO' %}
+                                        <img src="{% static 'dfiles/video.png' %}" alt="">
+                                        {% elif file.media_type == 'WORD' %}
+                                        <img src="{% static 'dfiles/word.jpeg' %}" alt="">
+                                        {% endif %}
+                                        
+                        {% for file in files %}
+                        
+                         <div class="col-lg-4 col-md-6 col-xs-12">
+                            {% if file.media_type == 'PDF' %}
+                            <div class="single-blog">
+                               <div class="blog-image">
+                                       <img src="{% static 'dfiles/pdf.png' %}" alt="">
+				</div>
+                                <div class="blog-content">
+                                    
+                                    <a href="{{ file.uploaded_file.url }}">
+                                        <h4 class="text-capitalize">{{ file.title }}</h4>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            {% elif file.media_type == 'VIDEO' %}
+                            <div class="single-blog">
+                               <div class="blog-image">
+                                       <video  width="100%" height="100%" controls poster="{% static 'dfiles/video.png' %}">
+                                        <source src="{{ file.uploaded_file.url }}" type="video/mp4">
+                                       </video>
+                                       
+				</div>
+                                <div class="blog-content">
+                                    
+                                        <h4 class="text-capitalize">{{ file.title }}</h4>
+                                
+                                </div>
+                            </div>
+                           {% endif %}
+                            
+                        </div>
+						<!-- End single blog -->
+			{% endfor %}
+                                
+                    </div>
+                </div>
+                {% else %}
+                <div class="row align-items-center justify-content-center d-flex">
+                        <div class="col-4" style="height:60vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                <h2 class="text-center" >Coming Soon</h2>
+                                <p>
+                                        No contents available yet. Please contact the admin
+                                </p>
+                        </div>
+                </div>
+                {% endif %}
+                <!-- End row -->
+        </div>
+        <!-- End Blog Area-->
+</div>
+{% endblock %}

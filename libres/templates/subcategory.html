@@ -1,0 +1,58 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+        <!-- Start Blog Area-->
+        <div class="blog-area fix bg-color area-padding-2">
+            <div class="container">
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+							<h3>{{ cat_title }}</h3>
+							<div class="Categories-nav">
+								<a href="{% url 'cat' %}"><p>..Go back to Categories</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+                {% if tabs %}
+                <div class="row">
+                    <div class="blog-grid home-blog">
+			    {% for tab in tabs %}
+                        <!-- Start single blog -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-blog">
+                               <div class="blog-image">
+					<a class="image-scale" href="{% url 'files' tab.category.name tab.title_slug %}">
+						<img src="{{ tab.thumb.url }}" alt="">
+					</a>
+				</div>
+                                <div class="blog-content">
+                                   
+                                    <a href="{{ tab.title_slug }}">
+                                        <h4 class="text-capitalize">{{ tab.title }}</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+						<!-- End single blog -->
+			{% endfor %}
+						
+                    
+                    </div>
+                </div>
+                {% else %}
+                <div class="row align-items-center">
+                        <div class="col-4" style="height:60vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                <h2 class="text-center" >Coming Soon</h2>
+                                <p>
+                                        No contents available yet. Please contact the admin
+                                </p>
+                        </div>
+                </div>
+                {% endif %}
+                <!-- End row -->
+            </div>
+        </div>
+        <!-- End Blog Area-->
+
+{% endblock %}

@@ -1,0 +1,9 @@
+Django
+djangorestframework
+djoser
+djangorestframework-simplejwt
+django-cors-headers
+gunicorn
+Pillow
+tzdata
+whitenoise

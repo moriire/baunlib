@@ -1,0 +1,66 @@
+{% extends 'new/base_generic.html' %}
+ {% block title %}Welcome{% endblock title %}
+{% block desc %}
+        <p class="my-3">
+          Baun Digital Library (BauLib) is a battery-powered educational
+          learning library designed to deliver curated content to remote,
+          offline and off-grid locations. It helps students in underserved
+          communities develop relevant Internet-ready skills.
+        </p>
+{% endblock desc %}
+
+{% block previous %} {% url 'home' %}{% endblock previous %}
+{% block next %} {% url 'categories' %}{% endblock next %}
+ {% block content %}
+      <div class="row justify-content-center">
+        <div class="col-xs-10 col-md-3 col-sm-8">
+          <div class="card p-2 m-2">
+            <i class="fa fa-briefcase fa-beat"></i>
+            <div class="card-body text-center">
+              <h5 class="card-title text-center">Great Catalog</h5>
+              <p class="card-text">
+                Easily access our curated content catalog anywhere, anytime, even with spotty internet. We empathize with connectivity woes. Knowledge is readily accessible, regardless of signal strength.
+              </p>
+              <!--a href="#" class="btn btn-warning">Go</a-->
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-10 col-md-3 col-sm-8">
+          <div class="card p-2 m-2">
+            <i class="fa fa-bars fa-beat"></i>
+            <div class="card-body text-center">
+              <h5 class="card-title text-center">Vast Content</h5>
+              <p class="card-text">
+                Explore a diverse array of titles, from timeless fiction classics to contemporary non-fiction bestsellers, easily accessible for your exploration and pleasure, right at your fingertips.
+              </p>
+              <!--a href="#" class="btn btn-warning">Go</a-->
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-10 col-md-3 col-sm-8">
+          <div class="card p-2 m-2">
+            <i class="fa fa-binoculars fa-beat"></i>
+            <div class="card-body text-center">
+              <h5 class="card-title text-center">Multimedia Content</h5>
+              <p class="card-text">
+                Dive into documentaries, educational videos, and podcasts. Embrace daily learning, no matter where you are. Broaden your perspectives and knowledge beyond geographical boundaries.
+              </p>
+              <!--a href="#" class="btn btn-warning">Go</a-->
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-10 col-md-3 col-sm-8">
+          <div class="card p-2 m-2">
+            <i class="fa fa-wifi fa-beat"></i>
+            <div class="card-body text-center">
+              <h5 class="card-title text-center">Open Access</h5>
+              <p class="card-text">
+                We champion unrestricted access to information, empowering curiosity. Fuel your inquisitiveness with limitless exploration, embracing the boundless opportunities of open access.  
+              </p>
+              <!--a href="#" class="btn btn-warning">Go</a-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock content %}

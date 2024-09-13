@@ -1,81 +1,29 @@
-# BaunLib
+# Baun Digital Library
 
-BaunLib is a library component of Baun Eduvault, designed to provide access to a diverse range of educational materials focusing on STEAM (Science, Technology, Engineering, Arts, and Mathematics) and Robotics.
+The **Baun Digital Library** is a core component of the **Baun Eduvault**, an educational media repository designed for seamless access to educational resources. The Digital Library is built on the Django framework and comes integrated with an **AI Tutor** backend, making it a powerful tool for enhancing educational experiences.
 
 ## Features
 
-- **Comprehensive Collection:** BaunLib offers a rich repository of educational resources covering various topics in STEAM and Robotics, catering to learners of all levels.
-- **User-Friendly Interface:** The frontend of BaunLib is built using Bootstrap 5, ensuring a responsive and intuitive user experience.
-- **Robust Backend:** Powered by uvicorn server and MariaDB database, BaunLib's backend ensures efficient data management and retrieval.
+- **AI Tutor Backend**: The Digital Library is powered by an AI-based tutor that assists in providing personalized educational content and guidance.
+- **Educational Media Repository**: Stores a variety of educational resources, including textbooks, research papers, videos, and other media types.
+- **Django Framework**: The entire system is designed using the Django web framework, ensuring scalability, security, and ease of development.
+- **Seamless Integration with Baun Eduvault**: The library is a key part of the Baun Eduvault ecosystem, which is a purpose-built educational device aimed at improving the delivery of educational content.
 
 ## Installation
 
-### Prerequisites
+To get started with the Baun Digital Library, follow these steps:
 
-Before installing BaunLib, make sure you have the following prerequisites installed on your system:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/baun-eduvault/baunlib.git
+   cd baunlib
 
-- Python (with pip)
-- MariaDB (or MySQL)
 
-### Installation Steps
-
-1. **Clone the Repository:**
-
-    ```bash
-    git clone https://github.com/roboticsbaun/baunlib.git
-    ```
-
-2. **Set Up the Backend:**
-
-    - Navigate to the `backend` directory:
-
-        ```bash
-        cd baunlib/backend
-        ```
-
-    - Install Python dependencies:
-
-        ```bash
-        pip install -r requirements.txt
-        ```
-
-    - Set up the MariaDB database:
-
-        - Create a new database and user:
-
-            ```sql
-            CREATE DATABASE baunlib_db;
-            CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
-            GRANT ALL PRIVILEGES ON baunlib_db.* TO 'user'@'localhost';
-            FLUSH PRIVILEGES;
-            ```
-
-        - Update the database connection details in `config.py`.
-
-    - Run the migration to set up the database schema:
-
-        ```bash
-        python manage.py migrate
-        ```
-
-    - Start the uvicorn server:
-
-        ```bash
-        uvicorn main:app --reload
-        ```
-
-3. **Set Up the Frontend:**
-
-    - No installation required for the frontend as it's built with Bootstrap 5.
-
-4. **Access BaunLib:**
-
-    - BaunLib frontend should be accessible at `http://localhost:3000`.
-
-## Usage
-
-- Once BaunLib is installed and running, users can navigate through the frontend to browse, search, and access educational materials in various STEAM and Robotics subjects.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+2. **Set up a virtual environment & run**:
+```bash
+source env/bin/activate  (linux)
+env\Scripts\activate (Windows)
+pip install -r dev-requirements.txt
+python3 manage.py migrate
+python3 manage.py createsuperuser
+python manage.py runserver

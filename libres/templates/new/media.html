@@ -1,0 +1,58 @@
+{% extends 'new/base_generic.html' %} 
+{% load static %}
+{% block title %}Categories{% endblock title %} 
+{% block header %} {{ title.upper }} Media {% endblock header %}
+{% block previous %} {% url 'sub_categories' cat  %} {% endblock previous %}
+{% block content %}
+
+<div class="row justify-content-center my-3">
+        <div class="col-xs-10">
+              <div class="col-12 my-3">
+                <h2 class="text-capitalize">{{ media_type }} ({{ count }})</h2>
+              </div>
+	      
+              <div class="row">
+
+		 {% for video in medias %}
+                <div class="col-12 col-sm-6 col-xl-4" style="">
+                 
+                  <div class="card border-0 border-bottom border-primary shadow-sm m-2" >
+  {% if video.media_type == 'VIDEO' %}
+
+                    <div class="card-body" 
+style="background-image: url({% static 'media-icons/images/image3.png' %}); background-position:center; background-size: cover; height:350px;"
+                  >
+		    </div>
+			 {% endif %}
+                      {% if video.media_type == 'PDF' %}
+                      <div class="card-body"
+style="background-image: url({% static 'media-icons/images/image1.png' %}); background-position:center; background-size: cover; height:350px">
+                  
+</div>
+		    {% endif %}
+		    {% if video.media_type == 'WORD' %}
+<div class="card-body"
+style="background-image: url({% static 'media-icons/images/image2.jpg' %}); background-position:center; background-size: cover; height:350px">
+
+</div>
+{% endif %}
+                    <div class="card-footer bg-warning py-2 text-center">
+                      <a
+                        href="{{ video.file_url }}"
+                        class="text-decoration-none btn btn-link-warning"
+                      >
+                        <h4 class="text-center">{{ video.title }}</h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+               {% endfor %}
+                
+              </div>
+            </div>
+	   
+          </div>
+    
+        </div>
+{% endblock content %}
