@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
+from aitutor.views import router
 admin.site.site_header = 'Baun Digital Library Admin'
 admin.site.site_title = "Baun Lib"
 admin.site.index_title = "Baun Digital Site administration"
@@ -23,11 +24,8 @@ urlpatterns = [
    path('admin/', admin.site.urls),
    path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
-    
+	path('auth/', include(router.urls)),
 ]
-#urlpatterns += path("", new_views.index, name="new_home")
-#urlpatterns += path("library/categories", categories, name="categories")
-#+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
 	urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

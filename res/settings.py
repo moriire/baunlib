@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    "user"
+    "user",
+    "aitutor"
 ]
 
 MIDDLEWARE = [
@@ -149,10 +150,11 @@ AUTHENTICATION_BACKENDS = [
 from datetime import timedelta
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=10),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=5),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_HEADER_TYPES': ('JWT',),
+    "TOKEN_OBTAIN_SERIALIZER": "user.serializers.CustomObtainPairSerializer",
 }
 
 REST_FRAMEWORK = {
@@ -192,6 +194,5 @@ DJOSER = {
     'USER_ID_FIELD': 'username',
     'LOGIN_FIELD': 'username',
     'USER_CREATE_PASSWORD_RETYPE': True,
-    'USERNAME_FIELD': 'username',
-    
+    'USERNAME_FIELD': 'username'
 }
