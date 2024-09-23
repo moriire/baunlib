@@ -6,7 +6,14 @@ from rest_framework.serializers import ModelSerializer
 User = get_user_model()
 
 class AITutorChat(models.Model):
+    class SubjectChoices(models.TextChoices):
+        iot = "IOT"
+        coding = "CODING"
+        stem = "STEM"
+        robotics = "ROBOTICS"
+        ai = "AI"
     user = models.ForeignKey(User, related_name="ai_users", on_delete=models.CASCADE)
+    subject = models.CharField(max_length=9, choices=SubjectChoices)
     prompt = models.CharField(max_length=512)
     response = models.TextField(default="")
     created_on = models.DateTimeField(auto_now=True)
