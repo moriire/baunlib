@@ -10,3 +10,4 @@ class AITutorView(ModelViewSet):
     serializer_class = AITutorChatSerializer
 
 router = SimpleRouter(trailing_slash=True)
+router.register("tutor", AITutorView)
