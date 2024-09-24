@@ -18,12 +18,14 @@ class AITutorChat(models.Model):
     response = models.TextField(default="")
     created_on = models.DateTimeField(auto_now=True)
     
+    def __str__(self):
+        return self.prompt
+
     class Meta:
         verbose_name = ("Chat")
         verbose_name_plural = ("Chats")
 
-
 class AITutorChatSerializer(ModelSerializer):
     class Meta:
         model = AITutorChat
-        fields = "__all__"
+        fields = ("user", "subject", "prompt", "response", "id")
