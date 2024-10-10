@@ -1,13 +1,19 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
-from aitutor.views import router
+from django.conf import settings
+from django.conf.urls.static import static
+from rest_framework.routers import SimpleRouter
+from aitutor.views import AITutorView
+from quiz.views import QuizView
+
+router = SimpleRouter(trailing_slash=True)
+router.register(r"tutor", AITutorView)
+router.register(r"quiz", QuizView)
 admin.site.site_header = 'Baun Digital Library Admin'
 admin.site.site_title = "Baun Lib"
 admin.site.index_title = "Baun Digital Site administration"
 admin.site.site_url = "/library/"
 
-from django.conf import settings
-from django.conf.urls.static import static
 #from django.views.static import serve
 
 from libres.views import index, categories, files, subcategory, media, about, contact
@@ -24,6 +30,7 @@ urlpatterns = [
    path('admin/', admin.site.urls),
    path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
+	path('ai/', include(router.urls)),
 	path('ai/', include(router.urls)),
 ]
 if settings.DEBUG:
